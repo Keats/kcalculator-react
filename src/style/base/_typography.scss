@@ -1,0 +1,94 @@
+/**
+ * Contains basic typography rules
+ * The size and a lot of things needs to be changed depending on the font
+ * obviously.
+ * Font sizes are taken from Foundation
+ * Only deals generic font-sizes and text elements such as blockquotes
+ */
+
+// Keep margin/padding consistent in the typography
+// Not in the variables files as it's simply for consistency in this file
+$base-spacing: 1.25rem;
+
+html {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  text-rendering: optimizelegibility;
+}
+
+// Reset paddings/margins
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+pre,
+form,
+p,
+blockquote,
+th,
+td {
+  margin:0;
+  padding:0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.4;
+}
+
+h1 { font-size: 2.75rem; }
+h2 { font-size: 2.3rem; }
+h3 { font-size: 1.7rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.1rem; }
+h6 { font-size: 1rem; }
+
+p {
+  margin-bottom: $base-spacing;
+  line-height: 1.6;
+}
+
+small {
+  font-size: 60%;
+}
+
+hr {
+  margin: $base-spacing 0;
+  clear: both;
+}
+
+ul, ol {
+  margin-bottom: $base-spacing;
+  margin-left: 1.1rem;
+  line-height: 1.6;
+}
+
+blockquote {
+  margin-bottom: $base-spacing;
+  padding: 0.5rem $base-spacing 0 $base-spacing;
+  border-left: 1px solid #ccc;
+
+  cite {
+    display: block;
+    &:before {
+      content: "\2014 \00A0"; // em dash
+    }
+  }
+}
+
+// TODO: add smaller font-sizes for lower resolutions once I add breakpoints
+// the inspect method to stringify variables is not in libsass
+// - h1: 2.15rem
+// - h2: 1.7rem
+// - h3: 1.4rem
+// - h4: 1.1rem

@@ -17,6 +17,7 @@ var paths = {
 var destination = "./build";
 var devCompiler = webpack(webpackConfig);
 var devServer;
+var production = process.env.NODE_ENV === 'production';
 
 
 // TASKS
