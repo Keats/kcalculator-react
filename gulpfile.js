@@ -51,6 +51,9 @@ gulp.task("webpack:build", function(callback) {
     if (err) {
       throw new $.util.PluginError("webpack:build", err);
     }
+    $.util.log("[webpack:build-dev]", stats.toString({
+      colors: true
+    }));
     callback();
   });
 });
