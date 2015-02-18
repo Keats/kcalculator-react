@@ -2,6 +2,8 @@ var gulp = require("gulp");
 var $ = require("gulp-load-plugins")();
 
 var del = require("del");
+//var tsfmt = require("typescript-formatter");
+//var glob = require("glob");
 
 var webpack = require('webpack');
 var webpackDevServer = require('webpack-dev-server');
@@ -33,8 +35,20 @@ gulp.task("ts-lint", function() {
   return gulp
     .src(paths.scripts)
     .pipe($.tslint())
-    .pipe($.tslint.report('prose', {emitError: true}));
+    .pipe($.tslint.report('prose', {emitError: false}));
 });
+
+//gulp.task("tsfmt", function(callback) {
+//  glob(paths.scripts, function(err, files) {
+//    tsfmt.processFiles(files, {
+//      editorconfig: false,
+//      replace: true,
+//      tsfmt: false,
+//      tslint: true
+//    });
+//    callback();
+//  });
+//});
 
 gulp.task("clean", function(callback) {
   del([destination], callback);

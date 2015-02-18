@@ -25,7 +25,7 @@ var config = {
   ],
   module: {
     loaders: [
-      {test: /\.ts$/, loaders: ['react-hot', 'ts-loader', 'ts-jsx-loader']}
+      {test: /\.ts$/, loaders: ['react-hot', 'ts-loader']}
     ]
   }
 };

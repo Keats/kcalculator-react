@@ -1,12 +1,19 @@
 ///<reference path="../types/types.d.ts"/>
 
-import React = require("react");
+import React = require("react/addons");
+import h = require("./utils/hyperscript");
 
-var message = "Hello world!";
+import InfoBox = require("./components/info");
 
-React.render(React.jsx(`
-    <div>
-        <span>{message}</span>
-    </div>
-`), document.body);
+class App extends React.Component<any, any, any> {
+  render() {
+    return (
+      h(InfoBox, {}, [])
+    );
+  }
+}
 
+React.render(
+  h(App, {}, []),
+  document.getElementById("content")
+);
